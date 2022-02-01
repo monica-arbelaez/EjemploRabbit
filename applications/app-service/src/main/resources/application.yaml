@@ -1,0 +1,27 @@
+##Spring Configuration
+server:
+  port: 8080
+spring:
+  application:
+    name: Spike
+  devtools:
+    add-properties: false
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  profiles:
+    include:
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: "/"
+
+app:
+  async:
+    withDLQRetry: true
+    retryDelay: 1000
+    maxRetries: 1
+
